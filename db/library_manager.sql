@@ -1,5 +1,6 @@
-DROP TABLE IF EXISTS authors;
 DROP TABLE IF EXISTS books;
+DROP TABLE IF EXISTS authors;
+
 
 CREATE TABLE authors (
   id SERIAL PRIMARY KEY,
@@ -12,5 +13,5 @@ CREATE TABLE books (
   title VARCHAR(255),
   genre VARCHAR(255),
   isbn_number INT,
-  author_id INT NOT NULL REFERENCES authors(id)
+  author_id INT NOT NULL REFERENCES authors(id) ON DELETE CASCADE
 );

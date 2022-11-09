@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for book in all_books %}
+    <div class ="book">
+        <div class="title">
+            {{book.title}} 
+            <div class="author">
+                {{book.author.first_name}} {{book.author.last_name}}
+                <div class="genre">
+                    {{book.genre}}
+                    <div class="isbn">ISBN: {{book.isbn_number}}</div>
+                    <div class="view_book">
+                        <nav>
+                            <a href="/books/<index>">View details</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
